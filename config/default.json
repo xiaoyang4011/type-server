@@ -1,0 +1,43 @@
+{
+    "database": {
+        "type": "mysql",
+        "host": "localhost",
+        "port": 3306,
+        "username": "root",
+        "password": "123456",
+        "database": "tester"
+    },
+    "port": 3500,
+    "log4js": {
+        "appenders": {
+            "access": {
+                "type": "datefile",
+                "filename": "/Users/liuxiaoyang/github/typeorm-sample/typeorm-access.log",
+                "pattern": "-yyyy-MM-dd",
+                "backups": 10
+            },
+            "error": {
+                "type": "datefile",
+                "filename": "/Users/liuxiaoyang/github/typeorm-sample/typeorm-error.log",
+                "pattern": "-yyyy-MM-dd",
+                "maxLogSize": 107374182400
+            },
+            "debug": {
+                "type": "file",
+                "filename": "/Users/liuxiaoyang/github/typeorm-sample/typeorm-debug.log",
+                "pattern": "-yyyy-MM-dd",
+                "backups": 10,
+                "maxLogSize": 107374182400
+            },
+            "out": {
+                "type": "console"
+            }
+        },
+        "categories": {
+            "default": { "appenders": ["access", "out"], "level": "info" },
+            "error": { "appenders": ["error", "out"], "level": "error" },
+            "debug": { "appenders": ["debug", "out"], "level": "debug" }
+        },
+        "replaceConsole": true
+    }
+}
